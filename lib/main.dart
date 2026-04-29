@@ -44,10 +44,10 @@ void main() async{
         runApp(const MyApp());
       }else{
 
-        runApp(ForceUpdateApp());
+        runApp(ForceUpdateApp(url: value.data['url']??'',));
       }
     }else{
-      runApp(ForceUpdateApp());
+      runApp(OutOfService());
     }
   },);
 
@@ -121,7 +121,8 @@ class _MainNavigatorCheckerState extends State<MainNavigatorChecker> {
 
 
 class ForceUpdateApp extends StatelessWidget {
-  const ForceUpdateApp({super.key});
+  final String url;
+  const ForceUpdateApp({super.key,required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -149,12 +150,10 @@ class ForceUpdateApp extends StatelessWidget {
             const ResponsiveBreakpoint.resize(1200, name: 'DESKTOP'),
           ],
         ),
-        home: UpdateRequiredPage(updateUrl: '')
+        home: UpdateRequiredPage(updateUrl: url)
     );
   }
 }
-
-
 class UpdateRequiredPage extends StatelessWidget {
   final String updateUrl;
 
@@ -244,12 +243,122 @@ class UpdateRequiredPage extends StatelessWidget {
                 const SizedBox(height: 15),
 
                 TextButton(
-                  onPressed: () {},
+                  onPressed: ()async {
+                    const String phone = '9647824450715';
+                    final Uri url = Uri.parse('https://wa.me/$phone');
+
+                    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+                    throw 'Could not launch WhatsApp';
+                    }
+                  },
                   child: const Text(
                     "تواصل مع الدعم",
                     style: TextStyle(color: Colors.white70),
                   ),
                 )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class OutOfService extends StatelessWidget {
+  const OutOfService({super.key,});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialBinding: AppBinding(),
+        title: 'UNO POS',
+        locale: const Locale('ar'),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(
+            backgroundColor: Colors.white,
+          ),
+          fontFamily: Constants.cairoFont,
+          useMaterial3: true,
+        ),
+        builder: (context, child) => ResponsiveWrapper.builder(
+          BouncingScrollWrapper.builder(context, child!),
+          defaultScale: true,
+          breakpoints: [
+            const ResponsiveBreakpoint.autoScale(320, name: 'MOBILE_SMALL'),
+            const ResponsiveBreakpoint.autoScale(375, name: 'MOBILE'),
+            const ResponsiveBreakpoint.autoScale(480, name: 'MOBILE_LARGE'),
+
+            const ResponsiveBreakpoint.resize(800, name: 'TABLET'),
+            const ResponsiveBreakpoint.resize(1200, name: 'DESKTOP'),
+          ],
+        ),
+        home: OutOfServicePage()
+    );
+  }
+}
+
+class OutOfServicePage extends StatelessWidget {
+
+  const OutOfServicePage({
+    super.key,
+  });
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              mainColor,
+
+              mainColor,],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.cloud_off_rounded,
+                  size: 90,
+                  color: Colors.white,
+                ),
+                const SizedBox(height: 20),
+
+                const Text(
+                  "السيرفر خارج الخدمة مؤقتا",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                const Text(
+                  "السيرفر متوقف حاليا بشكل طارئ ، يرجى المحاولة لاحقا",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white70,
+                    height: 1.5,
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+
               ],
             ),
           ),
