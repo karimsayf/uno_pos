@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "948937636469",
+    "project_id": "custom-projects-583e0",
+    "storage_bucket": "custom-projects-583e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948937636469:android:7c8b6198bd4d8ee644d63c",
+        "android_client_info": {
+          "package_name": "app.technolanes.uno"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5IENbUeLsDBj-6WCDb7hJDq6CiRPbxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948937636469:android:173db954c489726a44d63c",
+        "android_client_info": {
+          "package_name": "app.technolanes.uno_pos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5IENbUeLsDBj-6WCDb7hJDq6CiRPbxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948937636469:android:fda93ab133245d6444d63c",
+        "android_client_info": {
+          "package_name": "app.technolanes.unomandoub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5IENbUeLsDBj-6WCDb7hJDq6CiRPbxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948937636469:android:2bc999d244608eb544d63c",
+        "android_client_info": {
+          "package_name": "app.technolanes.yosrcaptain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5IENbUeLsDBj-6WCDb7hJDq6CiRPbxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948937636469:android:19f8454ad27eb78944d63c",
+        "android_client_info": {
+          "package_name": "app.technolanes.yusr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5IENbUeLsDBj-6WCDb7hJDq6CiRPbxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
